@@ -34,17 +34,12 @@ class General(object):
         print(self)
 
     # Операция проверки соответствия типа.
-    def is_type(self, type: Type) -> bool:
-        return type is General
+    def is_type(self, concrete_type: Type) -> bool:
+        return isinstance(self, concrete_type)
 
     # Операция получения типа текущего объекта.
     def type(self) -> Type:
-        return General
+        return type(self)
 
 
-class Any(General):
-    def is_type(self, type: Type) -> bool:
-        return type is Any or super().is_type(type)
-
-    def type(self) -> Type:
-        return Any
+class Any(General): ...
