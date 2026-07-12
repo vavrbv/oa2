@@ -45,7 +45,7 @@ class General(object):
 class Any(General): ...
 
 # Замыкание собственным типом None через множественное наследование
-# от типов Any и None
+# от типов Any и General
 class CustomNone(Any, General): ...
 
 
